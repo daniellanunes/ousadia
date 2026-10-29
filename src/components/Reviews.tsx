@@ -1,33 +1,49 @@
 import Section from "./Section";
 
-// Depoimentos de exemplo — substitua pelos reais.
 const reviews = [
-  { name: "Mariana L.", text: "Fiz minha primeira tattoo aqui e fui super bem recebida. O Vítor explicou cada etapa e o resultado ficou impecável." },
-  { name: "Thiago R.", text: "Já é minha quarta peça com a Duda. Traço limpo, cicatrização perfeita e um atendimento que faz você querer voltar." },
-  { name: "Fernanda S.", text: "Cobri uma tatuagem antiga que me incomodava há anos. Ficou melhor do que eu tinha imaginado." },
-  { name: "Lucas M.", text: "Estúdio limpo, organizado e com uma energia ótima. Saí de lá já pensando na próxima." },
+  {
+    name: "Carolina M.",
+    text: "Fiz o projeto de um selo postal com a memória de uma viagem à Chapada. O Tom conseguiu capturar cada detalhe com um traço limpo e delicado. Super recomendo!",
+  },
+  {
+    name: "Rafael B.",
+    text: "Atendimento diferenciado no Barra Center, estúdio com uma energia incrível e vista para o Farol da Barra. A tatuagem em blackwork superou todas as expectativas.",
+  },
+  {
+    name: "Beatriz S.",
+    text: "Segurança total do início ao fim. O Tom explicou o processo do sinal, mandou o esboço antes e no dia o resultado ficou impecável. Já planejando a próxima!",
+  },
+  {
+    name: "Lucas P.",
+    text: "O domínio que ele tem de cor e sombreamento parece mesmo uma pintura sobre tela. Experiência de alto padrão em Salvador.",
+  },
 ];
 
 export default function Reviews() {
   return (
     <Section
       id="depoimentos"
-      label="Depoimentos"
-      title={["Ao longo dos anos conquistamos", "a confiança de muitos clientes"]}
+      label="Experiências Reais"
+      title={["O que dizem os clientes —", "Confiança e arte reconhecida"]}
     >
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {reviews.map((r, i) => (
-          <li key={r.name} className={`reveal flex flex-col items-center ${i % 2 ? "lg:mt-10" : ""}`}>
-            <blockquote className="relative border border-black px-5 pb-10 pt-12 text-center text-sm leading-relaxed">
-              <span className="absolute left-1/2 top-2 -translate-x-1/2 font-display text-5xl font-bold leading-none text-flame">
+          <li
+            key={r.name}
+            className={`reveal flex flex-col items-center ${i % 2 ? "lg:mt-8" : ""}`}
+          >
+            <blockquote className="relative w-full border border-black/15 bg-white px-5 pb-8 pt-10 text-center text-xs leading-relaxed shadow-sm">
+              <span className="absolute left-1/2 top-2 -translate-x-1/2 font-display text-4xl font-bold leading-none text-flame">
                 “
               </span>
-              {r.text}
+              <p className="text-black/80">{r.text}</p>
             </blockquote>
-            <span className="-mt-6 grid h-12 w-12 place-items-center rounded-full border border-black bg-white font-display font-bold">
+            <span className="-mt-5 grid h-10 w-10 place-items-center rounded-full border border-flame bg-white font-display text-xs font-bold text-flame shadow-sm">
               {r.name[0]}
             </span>
-            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.1em]">{r.name}</p>
+            <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-black">
+              {r.name}
+            </p>
           </li>
         ))}
       </ul>

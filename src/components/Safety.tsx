@@ -2,27 +2,38 @@ import Section from "./Section";
 
 const items = [
   {
-    title: "Esterilização completa",
-    text: "Autoclave classe B, materiais descartáveis abertos na sua frente e bancada higienizada a cada cliente.",
+    title: "Esterilização & Biossegurança",
+    text: "Materiais 100% descartáveis e de uso único, abertos na frente do cliente. Tintas e insumos com registro ativo na Anvisa.",
   },
   {
-    title: "Proteção individual",
-    text: "Luvas nitrílicas, barreiras plásticas em todos os equipamentos e protocolo seguido à risca.",
+    title: "Ambiente Seguro & Climatizado",
+    text: "Espaço no Salvador Tattoo Studio projetado com padrões rigorosos de higiene, barreiras plásticas em todos os equipamentos e conforto térmico.",
   },
   {
-    title: "Acompanhamento",
-    text: "Kit de cuidados no fim da sessão e suporte pelo WhatsApp durante toda a cicatrização.",
+    title: "Suporte Pós-Procedimento",
+    text: "Orientações completas de cuidados para cicatrização perfeita e canal aberto via WhatsApp para esclarecer qualquer dúvida.",
   },
 ];
 
 export default function Safety() {
   return (
-    <Section id="seguranca" label="Segurança" title={["Seu conforto e sua segurança", "são a nossa principal tatuagem"]}>
-      <ul className="grid gap-10 md:grid-cols-3">
+    <Section
+      id="seguranca"
+      label="Cuidado & Saúde"
+      title={["Seu conforto e sua segurança —", "Prioridade absoluta em cada traço"]}
+    >
+      <ul className="grid gap-8 md:grid-cols-3">
         {items.map((item, i) => (
-          <li key={item.title} className={`reveal border-l border-flame pl-5 ${i === 1 ? "md:mt-12" : i === 2 ? "md:mt-24" : ""}`}>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.1em]">{item.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-graphite">{item.text}</p>
+          <li
+            key={item.title}
+            className={`reveal border-l-2 border-flame pl-5 ${
+              i === 1 ? "md:mt-6" : i === 2 ? "md:mt-12" : ""
+            }`}
+          >
+            <h3 className="font-display text-sm font-bold uppercase tracking-wider text-black">
+              {item.title}
+            </h3>
+            <p className="mt-2 text-xs leading-relaxed text-graphite">{item.text}</p>
           </li>
         ))}
       </ul>

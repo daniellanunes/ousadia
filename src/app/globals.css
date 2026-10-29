@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-ink: #000000;
+  --color-ink: #111111;
   --color-paper: #ffffff;
-  --color-flame: #dc5215;
-  --color-mist: #f2f2f2;
-  --color-graphite: #6b6b6b;
+  --color-flame: #c99e67;
+  --color-gold: #c99e67;
+  --color-gold-hover: #b38854;
+  --color-mist: #f6f6f6;
+  --color-graphite: #666666;
   --font-sans: var(--font-montserrat);
-  --font-display: var(--font-inter-tight);
+  --font-display: var(--font-lora), var(--font-inter-tight);
 }
 
 html {
@@ -17,21 +19,21 @@ html {
 body {
   background: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, -apple-system, sans-serif;
 }
 
 ::selection {
-  background: var(--color-flame);
-  color: var(--color-paper);
+  background: #c99e67;
+  color: #ffffff;
 }
 
-/* Granulado de filme por cima dos placeholders de foto */
+/* Granulado de filme por cima dos containers */
 .grain::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.25;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
